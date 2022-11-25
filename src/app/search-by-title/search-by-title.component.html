@@ -1,0 +1,47 @@
+<div class="container">
+
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2 mt-2 ">
+            <label>Nom Produit en tapant</label>
+            <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+            </div>
+            </form>
+    </div>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+
+
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let book of books | filter:searchTerm">
+                    <td>{{book.idBook}}</td>
+                    <td>{{book.titleBook}}</td>
+                    <td>{{book.author?.nameAuth}}</td>
+
+                    <td>{{book.year}}</td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.priceBook}}</td>
+               
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>

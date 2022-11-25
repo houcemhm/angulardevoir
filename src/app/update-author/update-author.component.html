@@ -1,0 +1,21 @@
+<form>
+    <div [hidden]="add" >
+    <label>ID Author</label>
+    <input readonly type="text" [(ngModel)]="author.idAuth" name="idAuth" class="form-control w-25">
+    </div>
+    <div>
+    <label>Author Name</label>
+    <input type="text" [(ngModel)]="author.nameAuth" name="nameAuth" class="form-control"
+    placeholder="Enter author name...">
+    </div>
+    <div>
+        <label>writing kind</label>
+        <input type="text" [(ngModel)]="author.kind" name="kind" class="form-control"
+        placeholder="Enter the kind or writing ...">
+        </div>
+    <div class="mt-2">
+     <button type="submit" [disabled]="!author.nameAuth" class="btn btn-success"
+    (click)="saveAuthor()" >{{add ? 'Add' : 'Update'}}</button>
+
+    </div>
+    </form>

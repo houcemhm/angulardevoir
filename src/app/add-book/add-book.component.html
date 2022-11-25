@@ -1,0 +1,49 @@
+<div class="container">
+  <div>
+  <h2>Add a Book :</h2>
+  </div>
+  <form >
+    <div hidden class="col-sm-6 col-md-8 col-lg-8">
+
+    <label >ID Book</label>
+    <input  type="text" [(ngModel)]="newBook.idBook"
+    name="idBook" class="form-control">
+    </div>
+    <div class="col-sm-6 col-md-8 col-lg-8" >
+    <label >Book Title</label>
+    <input type="text"[(ngModel)]= "newBook.titleBook"
+    name="titleBook" class="form-control">
+    </div>
+    <div class="input-group">
+    <div class="col-sm-3 col-md-4 col-lg-4">
+      <label >Year</label>
+      <input type="number" [(ngModel)]= "newBook.year"
+      name="year" class="form-control">
+      </div>
+    <div class="col-sm-3 col-md-4 col-lg-4">
+    <label >Book Price</label>
+    <input type="number" [(ngModel)]= "newBook.priceBook"
+    name="priceBook" class="form-control">
+    </div>
+  </div>
+    <div class="col-sm-6 col-md-8 col-lg-8">
+    <label >Description</label>
+    <textarea name="descBook"  cols="50" rows="5"
+    [(ngModel)]= "newBook.description"
+    ></textarea>
+    </div>
+    <div class="col-sm-6 col-md-8 col-lg-8">
+      <label>Author</label>
+      <select class="form-control form-control-lg" id="idAuth" name="idAuth"
+      [(ngModel)]="newIdAuth">
+       <option *ngFor="let author of authors" [value]="author.idAuth" >
+       {{author.nameAuth}}
+      </option>
+      </select>
+      </div>
+    <div class="mt-2">
+    <button type="submit" (click)="addBook()"class="btn btn-success">Add</button>
+    </div>
+    </form>
+
+

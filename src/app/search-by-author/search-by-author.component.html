@@ -1,0 +1,48 @@
+<div class="container">
+
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <label>Search By Author </label>
+        <select class="form-control form-control-lg" id="idAuth" name="idAuth" [(ngModel)]="idAuth"
+            (change)="onChange()">
+            <option *ngFor="let auth of authors" value="{{auth.idAuth}}">
+                {{auth.nameAuth}}
+            </option>
+        </select>
+    </div>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+
+
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let book of books">
+                    <td>{{book.idBook}}</td>
+                    <td>{{book.titleBook}}</td>
+                    <td>{{book.author?.nameAuth}}</td>
+
+                    <td>{{book.year}}</td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.priceBook}}</td>
+               
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>

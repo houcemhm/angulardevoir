@@ -1,0 +1,27 @@
+
+<div class="col-sm-4 col-md-4 col-lg-4 mb-4 container">
+    <app-update-author [author]="updatedAuthor" 
+    (authorUpdated)="authorUpdated($event)"
+    [add]="add"
+    ></app-update-author>
+    </div>
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom Catégorie</th> </tr>
+    </thead>
+    <tbody *ngFor="let auth of authors">
+    <tr>
+    <td>{{auth.idAuth}}</td>
+    <td>{{auth.nameAuth}}</td>
+    <td><a class="btn btn-success" (click)="editAuth(auth)">Editer</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
